@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./app.css";
+import Auth from "./auth";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,8 +15,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="pt">
+      <body className={inter.className + " w-screen min-h-screen m-0 p-0"}>
+        <Auth>{children}</Auth>
+      </body>
     </html>
   );
 }
